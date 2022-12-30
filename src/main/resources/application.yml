@@ -1,0 +1,37 @@
+# Spring Boot configuration
+spring:
+  profiles:
+    active: development
+  security:
+    user:
+      name: user
+      password: user
+  # Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/car_db
+    username: postgres
+    password: 12292022
+  # JPA properties
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: true
+  # Flyway configuration
+  flyway:
+    enabled: true
+    validate-on-migrate: true
+# Logger configuration
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: info
+    org.hibernate: info
+# Server configuration
+server:
+  port: 2308 #set your port
