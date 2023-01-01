@@ -35,3 +35,7 @@ logging:
 # Server configuration
 server:
   port: 2308 #set your port
+
+app:
+  secrets:
+    externalKey: ${EXTERNAL_KEY:NULL}

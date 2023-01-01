@@ -1,8 +1,10 @@
 package com.don.carsapi.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
@@ -11,20 +13,21 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "t_car")
-public class Car implements BaseModel<UUID> {
+@Table(name = "t_manufacturer")
+public class Manufacturer implements BaseModel<UUID> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "id" ,length = 36, nullable = false, updatable = false)
+    @Column(name = "id", length = 36, nullable = false, updatable = false)
     private UUID uuid;
 
-    private String model;
+    private String name;
+
 
     @Override
-    @JsonIgnore
     public UUID getId() {
         return this.uuid;
     }
+
 
 }
