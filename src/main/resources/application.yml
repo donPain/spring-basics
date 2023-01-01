@@ -20,7 +20,7 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     open-in-view: false
-    generate-ddl: true
+    generate-ddl: false
   # Flyway configuration
   flyway:
     enabled: true
