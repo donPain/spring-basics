@@ -1,7 +1,6 @@
 package com.don.carsapi.controller;
 
 import com.don.carsapi.model.BaseModel;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,7 +13,7 @@ import java.util.List;
 public abstract class AbstractController<T extends BaseModel<I>, I extends Serializable, R extends JpaRepository<T, I>> {
 
     @Autowired
-   R repository;
+    R repository;
 
     @GetMapping("/all")
     public ResponseEntity<List<T>> findAll() {
